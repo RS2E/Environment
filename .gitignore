@@ -1,0 +1,8 @@
+/bin/
+/.classpath
+/.project
+/.idea/
+/.settings/
+/nbproject/private/
+/build/
+/dist/
