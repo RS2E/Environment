@@ -1,6 +1,6 @@
-package rs2.enviroment.entity;
+package rs2.environment.entity;
 
-import rs2.enviroment.model.entity.CharacterModel;
+import rs2.environment.model.entity.CharacterModel;
 
 /**
  * @author Lazaro Brito.

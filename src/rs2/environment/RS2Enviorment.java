@@ -1,4 +1,4 @@
-package rs2.enviroment;
+package rs2.environment;
 
 /**
  * @author Lazaro Brito.
