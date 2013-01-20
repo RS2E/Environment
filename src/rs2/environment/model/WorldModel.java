@@ -1,9 +1,8 @@
 package rs2.environment.model;
 
-import java.util.Collection;
-
 import rs2.environment.model.entity.NPCModel;
 import rs2.environment.model.entity.PlayerModel;
+import rs2.environment.wrapper.World;
 
 /**
  * Represents the in-game world.
@@ -12,16 +11,16 @@ import rs2.environment.model.entity.PlayerModel;
  * @author Lazaro Brito.
  *
  */
-public interface WorldModel {
+public interface WorldModel extends Model<World> {
 	/**
 	 * @return The global collection of players.
 	 */
-	Collection<PlayerModel> getPlayers();
+	PlayerModel[] getPlayers();
 	
 	/**
 	 * @return The global collection of NPCs.
 	 */
-	Collection<NPCModel> getNPCs();
+	NPCModel[] getNPCs();
 	
 	/**
 	 * Finds a player by it's username.

@@ -1,5 +1,7 @@
 package rs2.environment.model.entity;
 
+import rs2.environment.wrapper.entity.Character;
+
 /**
  * Represents an in-game player or NPC.
  * This is a backend interface for implementation.
@@ -7,7 +9,7 @@ package rs2.environment.model.entity;
  * @author Lazaro Brito.
  *
  */
-public interface CharacterModel extends EntityModel {
+public interface CharacterModel<C extends Character<?>> extends EntityModel<C> {
 	String getName();
 	
 	int getCombatLevel();

@@ -1,6 +1,9 @@
 package rs2.environment.model.map;
 
-public interface PositionModel {
+import rs2.environment.model.Model;
+import rs2.environment.wrapper.map.Position;
+
+public interface PositionModel extends Model<Position> {
 	int getX();
 	
 	int getY();

@@ -1,6 +1,8 @@
 package rs2.environment.model.entity;
 
+import rs2.environment.model.Model;
 import rs2.environment.model.map.PositionModel;
+import rs2.environment.wrapper.entity.Entity;
 
 /**
  * Represents any in-game object.
@@ -12,6 +14,6 @@ import rs2.environment.model.map.PositionModel;
  * @author Lazaro Brito.
  *
  */
-public interface EntityModel {
+public interface EntityModel<W extends Entity<?>> extends Model<W> {
 	PositionModel getPosition();
 }
