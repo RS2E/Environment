@@ -1,4 +1,4 @@
-package rs2.environment.entity;
+package rs2.environment.wrap.entity;
 
 import rs2.environment.model.entity.CharacterModel;
 

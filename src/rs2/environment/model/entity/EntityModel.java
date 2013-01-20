@@ -1,5 +1,7 @@
 package rs2.environment.model.entity;
 
+import rs2.environment.model.map.PositionModel;
+
 /**
  * Represents any in-game object.
  * This can include, but is not limited to,
@@ -11,5 +13,5 @@ package rs2.environment.model.entity;
  *
  */
 public interface EntityModel {
-
+	PositionModel getPosition();
 }
