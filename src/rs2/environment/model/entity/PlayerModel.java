@@ -1,5 +1,6 @@
 package rs2.environment.model.entity;
 
+import rs2.environment.model.entity.bridge.PlayerBridge;
 import rs2.environment.wrapper.entity.Player;
 
 /**
@@ -10,5 +11,7 @@ import rs2.environment.wrapper.entity.Player;
  *
  */
 public interface PlayerModel extends CharacterModel<Player> {
-	String getUserName();
+	PlayerBridge getBridge();
+	
+	String getUserName_();
 }

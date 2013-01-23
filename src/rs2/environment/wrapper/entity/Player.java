@@ -10,4 +10,8 @@ public class Player extends Character<PlayerModel> {
 	public Player(PlayerModel model) {
 		super(model);
 	}
+	
+	public void message(String message) {
+		model.getBridge().sendMessage(message);
+	}
 }

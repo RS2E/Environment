@@ -1,6 +1,7 @@
 package rs2.environment.model.entity;
 
 import rs2.environment.model.Model;
+import rs2.environment.model.WorldModel;
 import rs2.environment.model.map.PositionModel;
 import rs2.environment.wrapper.entity.Entity;
 
@@ -15,5 +16,7 @@ import rs2.environment.wrapper.entity.Entity;
  *
  */
 public interface EntityModel<W extends Entity<?>> extends Model<W> {
-	PositionModel getPosition();
+	WorldModel getWorld_();
+	
+	PositionModel getPosition_();
 }

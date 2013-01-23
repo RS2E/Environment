@@ -23,7 +23,7 @@ public class World implements Wrapper<WorldModel> {
 	}
 	
 	public List<Player> getPlayers() {
-		PlayerModel[] playerModels = model.getPlayers();
+		PlayerModel[] playerModels = model.getPlayers_();
 		
 		LinkedList<Player> players = new LinkedList<Player>();
 		for(PlayerModel playerModel : playerModels) {
@@ -37,7 +37,7 @@ public class World implements Wrapper<WorldModel> {
 	}
 	
 	public List<NPC> getNPCs() {
-		NPCModel[] npcModels = model.getNPCs();
+		NPCModel[] npcModels = model.getNPCs_();
 		
 		LinkedList<NPC> npcs = new LinkedList<NPC>();
 		for(NPCModel npcModel : npcModels) {
@@ -51,6 +51,11 @@ public class World implements Wrapper<WorldModel> {
 	}
 	
 	public Player findPlayerByName(String username) {
-		return RS2Environment.wrap(model.findPlayerByName(username));
+		return RS2Environment.wrap(model.findPlayerByName_(username));
+	}
+
+	@Override
+	public void setModel(WorldModel model) {
+		this.model = model;
 	}
 }

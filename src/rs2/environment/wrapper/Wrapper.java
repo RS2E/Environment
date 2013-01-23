@@ -10,4 +10,6 @@ import rs2.environment.model.Model;
  */
 public interface Wrapper<M extends Model<?>> {
 	M getModel();
+	
+	void setModel(M model);
 }

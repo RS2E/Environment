@@ -30,4 +30,14 @@ public class Position implements Wrapper<PositionModel> {
 	public PositionModel getModel() {
 		return model;
 	}
+
+	@Override
+	public void setModel(PositionModel model) {
+		this.model = model;
+	}
+	
+	@Override
+	public String toString() {
+		return "[x=" + getX() + ", y=" + getY() + ", z=" + getZ() + "]";
+	}
 }
