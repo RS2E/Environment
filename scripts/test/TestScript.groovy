@@ -7,7 +7,7 @@ class TestScript implements ObjectScript {
 		if(action.getOption() == ObjectAction.RightClickOption.CLICK) {
 			def object = action.getPosition().getObject()
 			
-			player.message("Hey, ${player.getName()}, you tried to chop down a ${object.getDef().getName().toLowerCase()}.")
+			player.message("You tried to chop down a ${object.getDef().getName().toLowerCase()}.")
 		}
 	}
 }
