@@ -22,6 +22,14 @@ public class World implements Wrapper<WorldModel> {
 		return model;
 	}
 	
+	public RS2Environment getEnvironment() {
+		return model.getEnvironment();
+	}
+	
+	public int getClientVersion() {
+		return model.getClientVersion();
+	}
+	
 	public List<Player> getPlayers() {
 		PlayerModel[] playerModels = model.getPlayers_();
 		

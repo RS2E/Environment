@@ -20,6 +20,12 @@ public interface WorldModel extends Model<World> {
 	RS2Environment getEnvironment();
 	
 	/**
+	 * The client version the world is using.
+	 * @return The client revision.
+	 */
+	int getClientVersion();
+	
+	/**
 	 * @return The global collection of players.
 	 */
 	PlayerModel[] getPlayers_();

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import rs2.environment.events.Event;
+import rs2.environment.script.ObjectScript;
 import rs2.environment.wrapper.entity.Player;
 import rs2.environment.wrapper.map.Position;
 
@@ -51,6 +52,9 @@ public class ObjectOperation extends Event<Player> {
 
 	@Override
 	public void handle() {
-		context.message("On object click: " + id + ", " + option + ", " + position);
+		ObjectScript script = context.getWorld().getEnvironment().getObjectScript(id);
+		if(script != null) {
+			script.onOperation(context, this);
+		}
 	}
 }

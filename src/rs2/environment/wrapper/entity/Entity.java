@@ -6,6 +6,7 @@ import java.util.Queue;
 import rs2.environment.RS2Environment;
 import rs2.environment.events.Event;
 import rs2.environment.model.entity.EntityModel;
+import rs2.environment.wrapper.World;
 import rs2.environment.wrapper.Wrapper;
 import rs2.environment.wrapper.map.Position;
 import rs2.environment.wrapper.util.Attributes;
@@ -58,6 +59,10 @@ public abstract class Entity<M extends EntityModel<?>> implements Wrapper<M> {
 	@Override
 	public void setModel(M model) {
 		this.model = model;
+	}
+	
+	public World getWorld() {
+		return RS2Environment.wrap(model.getWorld_());
 	}
 	
 	public Position getPosition() {
