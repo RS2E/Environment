@@ -11,11 +11,11 @@ import rs2.environment.wrapper.entity.Character;
  * @see rs2.environment.wrapper.entity.Character
  */
 public interface CharacterModel<C extends Character<?>> extends EntityModel<C> {
-	String getName_();
+	String get_name();
 	
-	int getCombatLevel_();
+	int get_combat_level();
 	
-	void doAnimation_(int id, int delay);
+	void do_animation(int id, int delay);
 	
-	void doGraphic_(int id, int delay, int height, int dir, int dir2);
+	void do_graphic(int id, int delay, int height, int dir, int dir2);
 }
