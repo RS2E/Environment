@@ -8,7 +8,8 @@ import rs2.environment.wrapper.entity.Player;
  * This is a backend interface for implementation.
  * 
  * @author Lazaro Brito.
- *
+ * 
+ * @see rs2.environment.wrapper.entity.Player
  */
 public interface PlayerModel extends CharacterModel<Player> {
 	PlayerBridge get_bridge();

@@ -16,14 +16,26 @@ public class World extends AbstractWrapper<WorldModel> {
 		super(model);
 	}
 	
+	/**
+	 * Gets the environment context.
+	 * @return The environment.
+	 */
 	public RS2Environment getEnvironment() {
 		return model.get_env();
 	}
 	
+	/**
+	 * Gets the world's client version.
+	 * @return The client version.
+	 */
 	public int getClientVersion() {
 		return model.get_client_version();
 	}
 	
+	/**
+	 * Gets the global player list.
+	 * @return The global player list.
+	 */
 	public List<Player> getPlayers() {
 		PlayerModel[] playerModels = model.get_players();
 		
@@ -38,6 +50,10 @@ public class World extends AbstractWrapper<WorldModel> {
 		return players;
 	}
 	
+	/**
+	 * Gets the global npc list.
+	 * @return The global npc list.
+	 */
 	public List<NPC> getNPCs() {
 		NPCModel[] npcModels = model.get_npcs();
 		
@@ -52,14 +68,27 @@ public class World extends AbstractWrapper<WorldModel> {
 		return npcs;
 	}
 	
+	/**
+	 * Finds a player by it's username.
+	 * @param username The username
+	 * @return The player.
+	 */
 	public Player findPlayerByName(String username) {
 		return RS2Environment.wrap(model.find_player_by_name(username));
 	}
 	
+	/**
+	 * @return The maximum possible object id.
+	 */
 	public int getMaxObjectId() {
 		return model.get_max_object_id();
 	}
 	
+	/**
+	 * Gets an object definition for the specified id.
+	 * @param id The object id.
+	 * @return The object definition.
+	 */
 	public ObjectDefinition getObjectDefinition(int id) {
 		return RS2Environment.wrap(model.get_object_def(id));
 	}

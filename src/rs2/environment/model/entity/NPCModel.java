@@ -8,6 +8,7 @@ import rs2.environment.wrapper.entity.NPC;
  * 
  * @author Lazaro Brito.
  *
+ * @see rs2.environment.wrapper.entity.NPC
  */
 public interface NPCModel extends CharacterModel<NPC> {
 }

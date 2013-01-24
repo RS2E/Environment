@@ -6,6 +6,7 @@ import rs2.environment.wrapper.entity.defs.ObjectDefinition;
 /**
  * @author Lazaro Brito
  *
+ * @see rs2.environment.wrapper.entity.defs.ObjectDefinition
  */
 public interface ObjectDefinitionModel extends Model<ObjectDefinition> {
 	int get_id();

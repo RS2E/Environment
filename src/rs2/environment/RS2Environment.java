@@ -121,6 +121,11 @@ public class RS2Environment {
 		}
 	}
 
+	/**
+	 * Registers an object script with the object's id.
+	 * @param ids The ids to register with.
+	 * @param script The script to register.
+	 */
 	public void registerObjectScript(int[] ids, ObjectScript script) {
 		for (int i : ids) {
 			List<ObjectScript> scripts = objectScripts.get(i);
@@ -131,6 +136,11 @@ public class RS2Environment {
 		}
 	}
 
+	/**
+	 * Gets all the object scripts for a specified object id.
+	 * @param id The object id.
+	 * @return The object script.
+	 */
 	public List<ObjectScript> getObjectScripts(int id) {
 		return objectScripts.get(id);
 	}

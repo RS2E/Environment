@@ -8,6 +8,7 @@ import rs2.environment.wrapper.entity.Character;
  * 
  * @author Lazaro Brito.
  *
+ * @see rs2.environment.wrapper.entity.Character
  */
 public interface CharacterModel<C extends Character<?>> extends EntityModel<C> {
 	String getName_();

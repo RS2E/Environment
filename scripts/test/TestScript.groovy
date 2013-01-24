@@ -3,9 +3,9 @@ class TestScript implements ObjectScript {
 		env.registerObjectScript(ObjectDefinition.matchingAction(env, "chop down") as int[], this)
 	}
 	
-	void handleObjectOperation(Player player, ObjectOperation operation) {
-		if(operation.getOption() == ObjectOperation.RightClickOption.CLICK) {
-			def object = operation.getPosition().getObject()
+	void handleObjectAction(Player player, ObjectAction action) {
+		if(action.getOption() == ObjectAction.RightClickOption.CLICK) {
+			def object = action.getPosition().getObject()
 			
 			player.message("Hey, ${player.getName()}, you tried to chop down a ${object.getDef().getName().toLowerCase()}.")
 		}

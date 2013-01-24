@@ -12,6 +12,7 @@ import rs2.environment.wrapper.World;
  * 
  * @author Lazaro Brito.
  *
+ * @see rs2.environment.wrapper.World
  */
 public interface WorldModel extends Model<World> {
 	/**

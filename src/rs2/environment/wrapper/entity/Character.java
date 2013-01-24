@@ -11,10 +11,16 @@ public abstract class Character<C extends CharacterModel<?>> extends Entity<C> {
 		super(model);
 	}
 	
+	/**
+	 * @return Gets the display name.
+	 */
 	public String getName() {
 		return model.getName_();
 	}
 	
+	/**
+	 * @return The character's combat level.
+	 */
 	public int getCombatLevel() {
 		return model.getCombatLevel_();
 	}

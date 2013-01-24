@@ -13,5 +13,8 @@ public abstract class Event<E extends Entity<?>> {
 		this.context = context;
 	}
 	
+	/**
+	 * Executes the event.
+	 */
 	public abstract void handle();
 }

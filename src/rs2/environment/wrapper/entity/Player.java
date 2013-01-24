@@ -11,6 +11,11 @@ public class Player extends Character<PlayerModel> {
 		super(model);
 	}
 	
+	/**
+	 * @return The player's user name. 
+	 * 
+	 * This is formated specifically and is not ambiguous.
+	 */
 	public String getUserName() {
 		return model.get_user_name();
 	}

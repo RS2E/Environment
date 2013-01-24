@@ -14,6 +14,7 @@ import rs2.environment.wrapper.entity.Entity;
  * 
  * @author Lazaro Brito.
  *
+ * @see rs2.environment.wrapper.entity.Entity
  */
 public interface EntityModel<W extends Entity<?>> extends Model<W> {
 	WorldModel get_world();

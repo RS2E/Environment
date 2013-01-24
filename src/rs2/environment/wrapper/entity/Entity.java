@@ -49,10 +49,16 @@ public abstract class Entity<M extends EntityModel<?>> extends AbstractWrapper<M
 		return attributes;
 	}
 	
+	/**
+	 * @return The world context this entity is associated with.
+	 */
 	public World getWorld() {
 		return RS2Environment.wrap(model.get_world());
 	}
 	
+	/**
+	 * @return The current position this entity is occupying.
+	 */
 	public Position getPosition() {
 		return RS2Environment.wrap(model.get_position());
 	}

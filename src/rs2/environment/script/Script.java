@@ -7,5 +7,11 @@ import rs2.environment.RS2Environment;
  *
  */
 public interface Script {
+	/**
+	 * Initializes all the needed resources for the script
+	 * and registers itself.
+	 * 
+	 * @param env The environment context.
+	 */
 	void initialize(RS2Environment env);
 }

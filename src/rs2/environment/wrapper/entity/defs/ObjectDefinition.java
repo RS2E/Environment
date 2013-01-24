@@ -12,6 +12,12 @@ import rs2.environment.wrapper.AbstractWrapper;
  *
  */
 public class ObjectDefinition extends AbstractWrapper<ObjectDefinitionModel> {
+	/**
+	 * Finds all the object ids with the specified action.
+	 * @param env The environment context.
+	 * @param action The action we're matching.
+	 * @return The object ids.
+	 */
 	public static List<Integer> matchingAction(RS2Environment env, String action) {
 		List<Integer> matching = new ArrayList<Integer>();
 		for(int id=0; id<env.getWorld().getMaxObjectId(); id++) {
@@ -31,22 +37,37 @@ public class ObjectDefinition extends AbstractWrapper<ObjectDefinitionModel> {
 		super(model);
 	}
 	
+	/**
+	 * @return The object's id.
+	 */
 	public int getId() {
 		return model.get_id();
 	}
 	
+	/**
+	 * @return The object's name.
+	 */
 	public String getName() {
 		return model.get_name();
 	}
 	
+	/**
+	 * @return The object's actions.
+	 */
 	public String[] getActions() {
 		return model.get_actions();
 	}
 	
+	/**
+	 * @return The object's width.
+	 */
 	public int getSizeX() {
 		return model.get_size_x();
 	}
 	
+	/**
+	 * @return The object's length
+	 */
 	public int getSizeY() {
 		return model.get_size_y();
 	}

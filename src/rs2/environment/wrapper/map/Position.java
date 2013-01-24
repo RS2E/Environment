@@ -10,22 +10,39 @@ public class Position extends AbstractWrapper<PositionModel> {
 		super(model);
 	}
 	
+	/**
+	 * @return The tile's absolute X value.
+	 */
 	public int getX() {
 		return model.get_x();
 	}
 	
+	/**
+	 * @return The tile's absolute Y value.
+	 */
 	public int getY() {
 		return model.get_y();
 	}
 	
+	/**
+	 * @return The tile's absolute Z value.
+	 */
 	public int getZ() {
 		return model.get_z();
 	}
 	
+	/**
+	 * @return The main object being occupied on this position.
+	 */
 	public GameObject getObject() {
 		return RS2Environment.wrap(model.get_object());
 	}
 	
+	/**
+	 * Uses the distance formula to calculate the distance between two positions.
+	 * @param other The other position.
+	 * @return The distance.
+	 */
 	public int calcDistance(Position other) {
 		return (int) Math.sqrt(Math.pow(other.getX() - getX(), 2) + Math.pow(other.getY() - getY(), 2));
 	}

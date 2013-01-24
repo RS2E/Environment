@@ -7,7 +7,8 @@ import rs2.environment.wrapper.map.Position;
 /**
  * 
  * @author Lazaro Brito
- *
+ * 
+ * @see rs2.environment.wrapper.map.Position
  */
 public interface PositionModel extends Model<Position> {
 	int get_x();
