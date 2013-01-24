@@ -15,14 +15,14 @@ public abstract class Character<C extends CharacterModel<?>> extends Entity<C> {
 	 * @return Gets the display name.
 	 */
 	public String getName() {
-		return model.getName_();
+		return model.get_name();
 	}
 	
 	/**
 	 * @return The character's combat level.
 	 */
 	public int getCombatLevel() {
-		return model.getCombatLevel_();
+		return model.get_combat_level();
 	}
 	
 	
