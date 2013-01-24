@@ -4,5 +4,5 @@ import rs2.environment.events.player.ObjectOperation;
 import rs2.environment.wrapper.entity.Player;
 
 public interface ObjectScript extends Script {
-	void onOperation(Player player, ObjectOperation operation);
+	void handleObjectOperation(Player player, ObjectOperation operation);
 }

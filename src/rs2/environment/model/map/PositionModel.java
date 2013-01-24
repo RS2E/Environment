@@ -1,6 +1,7 @@
 package rs2.environment.model.map;
 
 import rs2.environment.model.Model;
+import rs2.environment.model.entity.GameObjectModel;
 import rs2.environment.wrapper.map.Position;
 
 /**
@@ -9,9 +10,11 @@ import rs2.environment.wrapper.map.Position;
  *
  */
 public interface PositionModel extends Model<Position> {
-	int getX();
+	int get_x();
 	
-	int getY();
+	int get_y();
 	
-	int getZ();
+	int get_z();
+	
+	GameObjectModel get_object();
 }

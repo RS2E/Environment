@@ -11,7 +11,7 @@ import rs2.environment.wrapper.entity.Player;
  *
  */
 public interface PlayerModel extends CharacterModel<Player> {
-	PlayerBridge getBridge();
+	PlayerBridge get_bridge();
 	
-	String getUserName_();
+	String get_user_name();
 }

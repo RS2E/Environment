@@ -6,8 +6,8 @@ import java.util.Queue;
 import rs2.environment.RS2Environment;
 import rs2.environment.events.Event;
 import rs2.environment.model.entity.EntityModel;
+import rs2.environment.wrapper.AbstractWrapper;
 import rs2.environment.wrapper.World;
-import rs2.environment.wrapper.Wrapper;
 import rs2.environment.wrapper.map.Position;
 import rs2.environment.wrapper.util.Attributes;
 
@@ -15,14 +15,12 @@ import rs2.environment.wrapper.util.Attributes;
  * @author Lazaro Brito.
  *
  */
-public abstract class Entity<M extends EntityModel<?>> implements Wrapper<M> {
-	protected M model;
-	
+public abstract class Entity<M extends EntityModel<?>> extends AbstractWrapper<M> {
 	private Queue<Event<?>> eventQueue = new LinkedList<Event<?>>();
 	private Attributes attributes = new Attributes();
 	
 	public Entity(M model) {
-		this.model = model;
+		super(model);
 	}
 	
 	/**
@@ -51,21 +49,11 @@ public abstract class Entity<M extends EntityModel<?>> implements Wrapper<M> {
 		return attributes;
 	}
 	
-	@Override
-	public M getModel() {
-		return model;
-	}
-	
-	@Override
-	public void setModel(M model) {
-		this.model = model;
-	}
-	
 	public World getWorld() {
-		return RS2Environment.wrap(model.getWorld_());
+		return RS2Environment.wrap(model.get_world());
 	}
 	
 	public Position getPosition() {
-		return RS2Environment.wrap(model.getPosition_());
+		return RS2Environment.wrap(model.get_position());
 	}
 }

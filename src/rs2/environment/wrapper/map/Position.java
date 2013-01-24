@@ -1,39 +1,33 @@
 package rs2.environment.wrapper.map;
 
+import rs2.environment.RS2Environment;
 import rs2.environment.model.map.PositionModel;
-import rs2.environment.wrapper.Wrapper;
+import rs2.environment.wrapper.AbstractWrapper;
+import rs2.environment.wrapper.entity.GameObject;
 
-public class Position implements Wrapper<PositionModel> {
-	private PositionModel model;
-	
+public class Position extends AbstractWrapper<PositionModel> {
 	public Position(PositionModel model) {
-		this.model = model;
+		super(model);
 	}
 	
 	public int getX() {
-		return model.getX();
+		return model.get_x();
 	}
 	
 	public int getY() {
-		return model.getY();
+		return model.get_y();
 	}
 	
 	public int getZ() {
-		return model.getZ();
+		return model.get_z();
+	}
+	
+	public GameObject getObject() {
+		return RS2Environment.wrap(model.get_object());
 	}
 	
 	public int calcDistance(Position other) {
 		return (int) Math.sqrt(Math.pow(other.getX() - getX(), 2) + Math.pow(other.getY() - getY(), 2));
-	}
-	
-	@Override
-	public PositionModel getModel() {
-		return model;
-	}
-
-	@Override
-	public void setModel(PositionModel model) {
-		this.model = model;
 	}
 	
 	@Override

@@ -9,5 +9,5 @@ import rs2.environment.wrapper.Wrapper;
  *
  */
 public interface Model<W extends Wrapper<?>> {
-	W getWrapper();
+	W get_wrapper();
 }

@@ -1,6 +1,7 @@
 package rs2.environment.events.player;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import rs2.environment.events.Event;
@@ -39,9 +40,9 @@ public class ObjectOperation extends Event<Player> {
 		}
 	}
 	
-	public final int id;
-	public final RightClickOption option;
-	public final Position position;
+	private int id;
+	private RightClickOption option;
+	private Position position;
 	
 	public ObjectOperation(Player context, int id, RightClickOption option, Position position) {
 		super(context);
@@ -49,12 +50,26 @@ public class ObjectOperation extends Event<Player> {
 		this.option = option;
 		this.position = position;
 	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public RightClickOption getOption() {
+		return option;
+	}
+	
+	public Position getPosition() {
+		return position;
+	}
 
 	@Override
 	public void handle() {
-		ObjectScript script = context.getWorld().getEnvironment().getObjectScript(id);
-		if(script != null) {
-			script.onOperation(context, this);
+		List<ObjectScript> scripts = context.getWorld().getEnvironment().getObjectScripts(id);
+		if(scripts != null) {
+			for(ObjectScript script : scripts) {
+				script.handleObjectOperation(context, this);
+			}
 		}
 	}
 }

@@ -12,10 +12,10 @@ public class Player extends Character<PlayerModel> {
 	}
 	
 	public String getUserName() {
-		return model.getUserName_();
+		return model.get_user_name();
 	}
 	
 	public void message(String message) {
-		model.getBridge().sendMessage(message);
+		model.get_bridge().sendMessage(message);
 	}
 }

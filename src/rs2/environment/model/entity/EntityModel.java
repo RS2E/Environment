@@ -16,7 +16,7 @@ import rs2.environment.wrapper.entity.Entity;
  *
  */
 public interface EntityModel<W extends Entity<?>> extends Model<W> {
-	WorldModel getWorld_();
+	WorldModel get_world();
 	
-	PositionModel getPosition_();
+	PositionModel get_position();
 }

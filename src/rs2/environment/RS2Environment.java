@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import rs2.environment.events.Event;
@@ -34,7 +36,7 @@ public class RS2Environment {
 	 */
 	public static <W extends Wrapper<?>> W wrap(Model<W> model) {
 		if(model != null) {
-			return model.getWrapper();
+			return model.get_wrapper();
 		} else {
 			return null;
 		}
@@ -64,7 +66,7 @@ public class RS2Environment {
 	private final World world;
 	
 	private final ScriptBase scripts;
-	private final Map<Integer, ObjectScript> objectScripts = new HashMap<Integer, ObjectScript>();
+	private final Map<Integer, List<ObjectScript>> objectScripts = new HashMap<Integer, List<ObjectScript>>();
 	
 	public RS2Environment(World world) {
 		this.world = world;
@@ -114,11 +116,15 @@ public class RS2Environment {
 
 	public void registerObjectScript(int[] ids, ObjectScript script) {
 		for(int i : ids) {
-			objectScripts.put(i, script);
+			List<ObjectScript> scripts = objectScripts.get(i);
+			if(scripts == null) {
+				objectScripts.put(i, (scripts = new ArrayList<ObjectScript>()));
+			}
+			scripts.add(script);
 		}
 	}
 	
-	public ObjectScript getObjectScript(int id) {
+	public List<ObjectScript> getObjectScripts(int id) {
 		return objectScripts.get(id);
 	}
 	

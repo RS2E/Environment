@@ -9,29 +9,23 @@ import rs2.environment.model.entity.NPCModel;
 import rs2.environment.model.entity.PlayerModel;
 import rs2.environment.wrapper.entity.NPC;
 import rs2.environment.wrapper.entity.Player;
+import rs2.environment.wrapper.entity.defs.ObjectDefinition;
 
-public class World implements Wrapper<WorldModel> {
-	private WorldModel model;
-	
+public class World extends AbstractWrapper<WorldModel> {
 	public World(WorldModel model) {
-		this.model = model;
-	}
-	
-	@Override
-	public WorldModel getModel() {
-		return model;
+		super(model);
 	}
 	
 	public RS2Environment getEnvironment() {
-		return model.getEnvironment();
+		return model.get_env();
 	}
 	
 	public int getClientVersion() {
-		return model.getClientVersion();
+		return model.get_client_version();
 	}
 	
 	public List<Player> getPlayers() {
-		PlayerModel[] playerModels = model.getPlayers_();
+		PlayerModel[] playerModels = model.get_players();
 		
 		LinkedList<Player> players = new LinkedList<Player>();
 		for(PlayerModel playerModel : playerModels) {
@@ -45,7 +39,7 @@ public class World implements Wrapper<WorldModel> {
 	}
 	
 	public List<NPC> getNPCs() {
-		NPCModel[] npcModels = model.getNPCs_();
+		NPCModel[] npcModels = model.get_npcs();
 		
 		LinkedList<NPC> npcs = new LinkedList<NPC>();
 		for(NPCModel npcModel : npcModels) {
@@ -59,11 +53,14 @@ public class World implements Wrapper<WorldModel> {
 	}
 	
 	public Player findPlayerByName(String username) {
-		return RS2Environment.wrap(model.findPlayerByName_(username));
+		return RS2Environment.wrap(model.find_player_by_name(username));
 	}
-
-	@Override
-	public void setModel(WorldModel model) {
-		this.model = model;
+	
+	public int getMaxObjectId() {
+		return model.get_max_object_id();
+	}
+	
+	public ObjectDefinition getObjectDefinition(int id) {
+		return RS2Environment.wrap(model.get_object_def(id));
 	}
 }
