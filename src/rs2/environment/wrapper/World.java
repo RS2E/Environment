@@ -10,18 +10,11 @@ import rs2.environment.model.entity.PlayerModel;
 import rs2.environment.wrapper.entity.NPC;
 import rs2.environment.wrapper.entity.Player;
 import rs2.environment.wrapper.entity.defs.ObjectDefinition;
+import rs2.environment.wrapper.map.Position;
 
 public class World extends AbstractWrapper<WorldModel> {
 	public World(WorldModel model) {
 		super(model);
-	}
-	
-	/**
-	 * Gets the environment context.
-	 * @return The environment.
-	 */
-	public RS2Environment getEnvironment() {
-		return model.get_env();
 	}
 	
 	/**
@@ -91,5 +84,16 @@ public class World extends AbstractWrapper<WorldModel> {
 	 */
 	public ObjectDefinition getObjectDefinition(int id) {
 		return RS2Environment.wrap(model.get_object_def(id));
+	}
+	
+	/**
+	 * Gets the position for the absolute coordinates.
+	 * @param x
+	 * @param y
+	 * @param z The plane/height.
+	 * @return The position.
+	 */
+	public Position getPosition(int x, int y, int z) {
+		return RS2Environment.wrap(model.get_position(x, y, z));
 	}
 }

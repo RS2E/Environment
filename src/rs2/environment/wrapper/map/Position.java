@@ -47,6 +47,10 @@ public class Position extends AbstractWrapper<PositionModel> {
 		return (int) Math.sqrt(Math.pow(other.getX() - getX(), 2) + Math.pow(other.getY() - getY(), 2));
 	}
 	
+	public Position translate(int x, int y, int z) {
+		return getEnvironment().getWorld().getPosition(getX() + x, getY() + y, getZ() + z);
+	}
+	
 	@Override
 	public String toString() {
 		return "[x=" + getX() + ", y=" + getY() + ", z=" + getZ() + "]";

@@ -1,5 +1,6 @@
 package rs2.environment.model;
 
+import rs2.environment.RS2Environment;
 import rs2.environment.wrapper.Wrapper;
 
 /**
@@ -9,5 +10,11 @@ import rs2.environment.wrapper.Wrapper;
  *
  */
 public interface Model<W extends Wrapper<?>> {
+	/**
+	 * The environment instance.
+	 * @return The environment.
+	 */
+	RS2Environment get_env();
+	
 	W get_wrapper();
 }

@@ -1,9 +1,9 @@
 package rs2.environment.model;
 
-import rs2.environment.RS2Environment;
 import rs2.environment.model.entity.NPCModel;
 import rs2.environment.model.entity.PlayerModel;
 import rs2.environment.model.entity.defs.ObjectDefinitionModel;
+import rs2.environment.model.map.PositionModel;
 import rs2.environment.wrapper.World;
 
 /**
@@ -15,12 +15,6 @@ import rs2.environment.wrapper.World;
  * @see rs2.environment.wrapper.World
  */
 public interface WorldModel extends Model<World> {
-	/**
-	 * The environment instance.
-	 * @return The environment.
-	 */
-	RS2Environment get_env();
-	
 	/**
 	 * The client version the world is using.
 	 * @return The client revision.
@@ -46,5 +40,7 @@ public interface WorldModel extends Model<World> {
 	
 	int get_max_object_id();
 	ObjectDefinitionModel get_object_def(int id);
+	
+	PositionModel get_position(int x, int y, int z);
 	
 }
