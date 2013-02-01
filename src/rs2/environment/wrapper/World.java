@@ -96,4 +96,8 @@ public class World extends AbstractWrapper<WorldModel> {
 	public Position getPosition(int x, int y, int z) {
 		return RS2Environment.wrap(model.get_position(x, y, z));
 	}
+
+	public String getWorkingDirectory() {
+		return model.get_working_directory();
+	}
 }

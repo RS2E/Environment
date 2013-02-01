@@ -42,5 +42,7 @@ public interface WorldModel extends Model<World> {
 	ObjectDefinitionModel get_object_def(int id);
 	
 	PositionModel get_position(int x, int y, int z);
+
+	String get_working_directory();
 	
 }
