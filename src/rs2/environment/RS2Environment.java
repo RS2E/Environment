@@ -75,7 +75,7 @@ public class RS2Environment {
 	public RS2Environment(World world) {
 		this.world = world;
 
-		scripts = new ScriptBase(new String[] { world.getWorkingDirectory() + "script/" });
+		scripts = new ScriptBase(this, new String[] { world.getWorkingDirectory() + "script/" });
 
 		try {
 			loadScripts();
@@ -86,8 +86,7 @@ public class RS2Environment {
 	}
 
 	private void loadScripts() throws IOException {
-		BufferedReader cfg = new BufferedReader(new FileReader(
-				"data/script_list.txt"));
+		BufferedReader cfg = new BufferedReader(new FileReader(world.getWorkingDirectory() + "data/script_list.txt"));
 		try {
 			int lineNumber = 0;
 			String line;

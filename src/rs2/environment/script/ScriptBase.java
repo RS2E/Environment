@@ -15,6 +15,8 @@ import java.util.Map;
 
 import org.codehaus.groovy.control.customizers.ImportCustomizer;
 
+import rs2.environment.RS2Environment;
+
 /**
  * @author Lazaro Brito
  *
@@ -40,14 +42,14 @@ public class ScriptBase {
 	
 	private final Map<String, Class<?>> scripts = new HashMap<String, Class<?>>();
 	
-	public ScriptBase(String[] classPath) {
+	public ScriptBase(RS2Environment env, String[] classPath) {
 		try {
 			engine = new GroovyScriptEngine(classPath);
 			
 			ImportCustomizer imports = new ImportCustomizer();
 			imports.addImport("RS2Environment", "rs2.enrionment.RS2Environment");
 			imports.addImport("Constants", "alterrs.Constants");
-			File importsFile = new File("data/script_api.txt");
+			File importsFile = new File(env.getWorld().getWorkingDirectory() + "data/script_api.txt");
 			loadImports(importsFile, imports);
 			
 			engine.getConfig().addCompilationCustomizers(imports);
