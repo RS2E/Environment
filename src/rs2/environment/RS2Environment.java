@@ -75,7 +75,7 @@ public class RS2Environment {
 	public RS2Environment(World world) {
 		this.world = world;
 
-		scripts = new ScriptBase(new String[] { "scripts/" });
+		scripts = new ScriptBase(new String[] { "script/" });
 
 		try {
 			loadScripts();
